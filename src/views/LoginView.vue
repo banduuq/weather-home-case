@@ -3,9 +3,9 @@
 	<div class="qor">  
 			<div v-if="!loggedIn" class="login">
 				<form>
-					<label for="chk" aria-hidden="true">Login</label>
+					<label>Login</label>
 					<input v-model="username" type="text" name="username" placeholder="username" required="">
-					<input v-model="password" type="password" name="pswd" placeholder="Password" required="">
+					<input v-model="password" type="password" name="password" placeholder="Password" required="">
 					<button @click="login">Login</button>
 				</form>
 				<p :style="{ color: messageColor }">{{ message }}</p>
@@ -13,9 +13,7 @@
 			<div v-if="loggedIn">
 				<router-link :to="{ name: 'home', }"></router-link>	
 			</div>
-
 	</div>	
-
   </div>
 	
 </template>
@@ -70,14 +68,7 @@ export default {
 	border-radius: 10px;
 	box-shadow: 5px 20px 50px #000;
 } 
-#chk{
-	display: none;
-}
-.signup{
-	position: relative;
-	width:100%;
-	height: 100%;
-}
+
 .qor label{
 	color: #fff;
 	font-size: 2.3em;
@@ -129,14 +120,6 @@ export default {
 }
 .login label{
 	color: #573b8a;
-	transform: scale(.6);
-}
-
-#chk:checked ~ .login{
-	transform: translateY(-500px);
-}
-#chk:checked ~ .login label{
-	transform: scale(1);	
 }
 
 
